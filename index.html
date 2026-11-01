@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><title>Our boy · MFM notes</title>
+<meta name="theme-color" content="#0d9488"><link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="MFM notes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,system-ui,sans-serif;background:#f5fbfa;color:#1f2937}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:calc(10px + env(safe-area-inset-top)) 14px 10px;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+h1{margin:0 0 8px;font-size:18px;color:#0f766e}h1 span{color:#7c3aed}
+nav{display:flex;gap:6px;background:#eef2f7;border-radius:12px;padding:4px}
+nav a{flex:1;text-align:center;padding:9px 4px;border-radius:9px;text-decoration:none;color:#475569;font-weight:600;font-size:14px;transition:.2s}
+nav a.on{background:#fff;color:#0d9488;box-shadow:0 1px 4px rgba(0,0,0,.1)}nav a[href="#height"].on{color:#7c3aed}
+main{max-width:900px;margin:0 auto;padding:14px}section{display:none;animation:f .25s ease}section.on{display:block}
+@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(15,118,110,.1)}.card img{width:100%;display:block}
+.btn{display:block;margin:14px 0 6px;text-align:center;padding:13px;border-radius:12px;background:linear-gradient(90deg,#0d9488,#7c3aed);color:#fff;font-weight:600;text-decoration:none}
+.note{font-size:12px;color:#64748b;text-align:center;margin:8px 0 24px}
+</style></head><body>
+<header><h1>Our boy · <span>MFM notes</span></h1><nav>
+<a href="#drugs">The two drugs</a><a href="#height">Height</a></nav></header>
+<main>
+<section id="drugs"><div class="card"><img src="drugs-1.png" alt="Infigratinib and vosoritide one-pager"></div><a class="btn" href="drugs.pdf" target="_blank">Open PDF</a></section>
+<section id="height"><div class="card"><img src="height-1.png" alt="Height projections chart"></div><a class="btn" href="height.pdf" target="_blank">Open PDF</a></section>
+<p class="note">General information, not medical advice. Pinch to zoom.</p></main>
+<script>
+function go(){var h=(location.hash||'#drugs').slice(1);if(!document.getElementById(h))h='drugs';
+document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id==h));
+document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+h));scrollTo(0,0)}
+addEventListener('hashchange',go);go();
+</script></body></html>
