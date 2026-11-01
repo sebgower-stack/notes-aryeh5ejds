@@ -1,4 +1,4 @@
-const VERSION="2026-11-02T10:41:34";
+const VERSION="2026-11-02T10:41:51";
 const CACHE="mfm-"+VERSION;
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(['./','index.html']).catch(()=>{})));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
